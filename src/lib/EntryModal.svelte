@@ -1,4 +1,7 @@
-
+<script>
+    let emoji = "😐";
+    let emojiList = "worst: '😭', bad: '🙁', okay: '😐', good: '🙂',best: '😁'"
+</script>
 <div class="modal fade" id="newEntry" tabindex="-1">
     <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
    	 <div class="modal-content">
@@ -13,19 +16,19 @@
 <div class="row">
     <div class="col">
    	 <form class="form-floating">
-   		 <input type="number" class="form-control" id="dayInput" />
+   		 <input type="number" class="form-control" id="dayInput" value="1" min="1" max="31"/>
    		 <label for="dayInput">Day</label>
    	 </form>
     </div>
     <div class="col">
    	 <form class="form-floating">
-   		 <input type="number" class="form-control" id="monthInput" />
+   		 <input type="number" class="form-control" id="monthInput" value="1" min="1" max="12"/>
    		 <label for="monthInput">Month</label>
    	 </form>
     </div>
     <div class="col">
    	 <form class="form-floating">
-   		 <input type="number" class="form-control" id="yearInput" />
+   		 <input type="number" class="form-control" id="yearInput" value="2021" min="2021" />
    		 <label for="yearInput">Year</label>
    	 </form>
     </div>
@@ -35,7 +38,7 @@
 <!-- Mood Scale -->
 <div class="row mt-3 text-center">
     <h5>How was your day?</h5>
-    <h1 class="display-1">{emoji}</h1>
+    <h1 class="display-1">{emoji }</h1>
 </div>
 <div class="row px-5">
     <div class="btn-group mt-2 mb-3" role="group">
@@ -44,6 +47,80 @@
         <!-- Okay Mood -->
         <!-- Good Mood -->
         <!-- Best Mood -->
+        <!-- Worst Mood -->
+            <!-- Worst Mood -->
+<input
+type="radio"
+class="btn-check"
+name="moodRadio"
+id="worst"
+autocomplete="off"
+on:click={() => {
+    emoji = emojiList.worst;
+}}
+/>
+<label class="btn btn-outline-danger" for="worst">Worst</label>
+
+<!-- Worst Mood -->
+<input
+    type="radio"
+    class="btn-check"
+    name="moodRadio"
+    id="bad"
+    autocomplete="off"
+    on:click={() => {
+        emoji = emojiList.bad;
+    }}
+/>
+<label class="btn btn-outline-warning" for="bad">Bad</label>
+<!-- Worst Mood -->
+<input
+    type="radio"
+    class="btn-check"
+    name="moodRadio"
+    id="okay"
+    autocomplete="off"
+    on:click={() => {
+        emoji = emojiList.okay;
+    }}
+/>
+<label class="btn btn-outline-primary" for="okay">Okay</label>
+<!-- Worst Mood -->
+<input
+    type="radio"
+    class="btn-check"
+    name="moodRadio"
+    id="good"
+    autocomplete="off"
+    on:click={() => {
+        emoji = emojiList.good;
+    }}
+/>
+<label class="btn btn-outline-info" for="good">Good</label>
+
+<!-- Worst Mood -->
+<input
+    type="radio"
+    class="btn-check"
+    name="moodRadio"
+    id="best"
+    autocomplete="off"
+    on:click={() => {
+        emoji = emojiList.best;
+    }}
+/>
+<label class="btn btn-outline-sucess" for="best">Best</label>
+<!-- Comments -->
+<div class="form-floating">
+    <textarea class="form-control" id="comment" />
+    <label for="commentTextarea">Comments</label>
+</div>
+
+
+
+
+
+
    </div>
 </div>
 
